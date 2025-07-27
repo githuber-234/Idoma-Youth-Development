@@ -1,0 +1,19 @@
+{% extends "idoma_app/base.html" %}
+{% block content %}
+{% load static %}
+<link
+    rel="stylesheet"
+    type="text/css"
+    href="{% static 'idoma_app/projects.css' %}"
+/>
+<div class="container">
+  <h1>Development Projects</h1>
+  {% for project in projects %}
+  <section>
+    <h2>{{ project.project_name }}</h2>
+    <p>{{ project.project_content }}</p>
+    <p>{{ project.created_at|date:"M d, Y" }}</p>
+  </section>
+  {% endfor %}
+</div>
+{% endblock %}

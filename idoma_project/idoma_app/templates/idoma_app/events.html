@@ -1,0 +1,75 @@
+{% extends "idoma_app/base.html" %}
+{% block content %}
+{% load static %}
+<link
+    rel="stylesheet"
+    type="text/css"
+    href="{% static 'idoma_app/events.css' %}"
+/>
+<div class="container">
+  <h1>Events & Media</h1>
+
+  <section>
+    <h2>Upcoming Events</h2>
+    <ul>
+      {% for event in upcoming_events %}
+        <div class="event-card">
+          <img src="{{ event.image.url }}" alt="{{ event.name }}">
+          <p>{{ event.name }} - {{ event.date }}</p>
+        </div>
+      {% empty %}
+        <li>No upcoming events.</li>
+      {% endfor %}
+    </ul>
+  </section>
+
+  <section>
+    <h2>Past Events</h2>
+    <div class="gallery">
+      {% for event in past_events %}
+        <div class="event-card">
+          <img src="{{ event.image.url }}" alt="{{ event.name }}">
+          <p>{{ event.name }}</p>
+        </div>
+      {% empty %}
+        <p>No past events to show.</p>
+      {% endfor %}
+    </div>
+  </section>
+
+  <section>
+    <h2>Media Gallery</h2>
+    <p>Explore our photo and video highlights from community and cultural events.</p>
+    <button href="#" class="btn btn-secondary" onclick="openModal('galleryModal')">View Gallery</button>
+  </section>
+</div>
+<div id="galleryModal" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal('galleryModal')">&times;</span>
+    <h2>Gallery</h2>
+    <div class="gallery-grid">
+    {% for image in gallery_images %}
+      <div class="gallery-item">
+        <img src="{{ image.image.url }}" alt="{{ image.title }}" width="300">
+        <p>{{ image.title }}</p>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+<script>
+  function openModal(id) {
+    document.getElementById(id).style.display = "block";
+  }
+
+  function closeModal(id) {
+    document.getElementById(id).style.display = "none";
+  }
+
+  window.onclick = function (event) {
+    document.querySelectorAll(".modal").forEach(modal => {
+      if (event.target == modal) modal.style.display = "none";
+    });
+  };
+</script>
+{% endblock %}

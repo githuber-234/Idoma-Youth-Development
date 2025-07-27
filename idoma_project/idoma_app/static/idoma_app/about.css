@@ -1,0 +1,148 @@
+.about-header {
+  color: #900;
+  text-align: center;
+  padding: 30px 20px;
+}
+
+.about-header h1 {
+  font-size: 3em;
+  margin-bottom: 10px;
+}
+
+.about-header p {
+  font-size: 1.2em;
+}
+
+.about-section {
+  padding: 30px 20px;
+  background-color: white;
+}
+
+.about-flex-wrapper {
+  display: flex;
+  flex-direction: row;
+  max-width: 1200px;
+  margin: auto;
+  gap: 40px;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+.about-image {
+  flex: 1;
+  min-width: 300px;
+  max-width: 500px;
+  width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.about-content {
+  flex: 2;
+  min-width: 300px;
+}
+
+.about-content h2 {
+  color: #900;
+  margin-top: 30px;
+  font-size: 1.8em;
+}
+
+.about-content h2:first-of-type {
+  margin-top: 0;
+}
+
+.about-content p,
+.about-content ul {
+  font-size: 1.05em;
+  line-height: 1.7;
+  margin-top: 10px;
+}
+
+.about-content ul {
+  list-style: disc inside;
+  padding-left: 0;
+}
+
+/* Contact */
+.contact-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  background-color: white;
+  padding: 3rem 1rem;
+  max-width: 90%;
+  margin: 5rem auto 2rem auto;
+}
+
+.contact-left,
+.contact-right {
+  flex: 1 1 400px;
+  background-color: #ffffff;
+  padding: 2rem;
+}
+
+.contact-form-head h2 {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  color: #900;
+  text-align: center;
+}
+
+.contact-btn {
+  background-color: #900;
+  color: #fff;
+  padding: 0.75rem 2rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 0.75rem;
+  cursor: pointer;
+  width: 100%;
+}
+
+.contact-btn:hover {
+  background-color: black;
+}
+
+.contact-right {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1rem;
+  padding: 2rem 1rem;
+  font-size: 1rem;
+  background-color: #fff;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  color: black;
+  padding: 0.8rem 1rem;
+  border-radius: 0.75rem;
+  text-decoration: none;
+  background-color: #900;
+  font-weight: 500;
+}
+
+.contact-item:hover {
+  background-color: #e1efff;
+  color: #004c8c;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .about-flex-wrapper {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .about-image {
+    margin: 0 auto;
+  }
+
+  .about-content {
+    padding-top: 20px;
+  }
+}

@@ -1,0 +1,37 @@
+{% extends "idoma_app/base.html" %}
+{% load static %}
+{% block content %}
+<link
+    rel="stylesheet"
+    type="text/css"
+    href="{% static 'idoma_app/about.css' %}"
+/>
+<header class="about-header">
+    <h1>About Us</h1>
+    <p>Get to know more about our team and mission</p>
+</header>
+<section class="about-section">
+    <div class="about-flex-wrapper">
+        <img src="{% static 'idoma_app/images/website-image2.jpg' %}" alt="Idoma Youth Empowerment" class="about-image">
+        <div class="about-content">
+            <h2>Our Purpose</h2>
+            <p>
+                The <strong>Idoma Youth Development Initiative</strong> is a community-driven movement committed to uplifting 
+                and empowering young people of the Idoma nation through education, entrepreneurship, leadership training, 
+                and community engagement.
+            </p>
+            <h2>Our Mission</h2>
+            <p>
+                Our mission is to create sustainable opportunities for Idoma youths to grow, lead, and contribute meaningfully 
+                to society. We believe in harnessing local talent and promoting innovation, mentorship, and personal development.
+            </p>
+            <h2>Our Vision</h2>
+            <p>
+                To build a vibrant and self-reliant generation of Idoma youths who are equipped with the skills, confidence, 
+                and support they need to shape a better future for themselves and their communities.
+            </p>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

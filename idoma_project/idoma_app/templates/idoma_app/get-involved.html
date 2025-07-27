@@ -1,0 +1,183 @@
+{% extends "idoma_app/base.html" %} {% block content %} {% load static %}
+<link
+  rel="stylesheet"
+  type="text/css"
+  href="{% static 'idoma_app/get-involved.css' %}"
+/>
+<div class="container">
+  <h1>Get Involved & Contact</h1>
+
+  <section>
+    <h2>Volunteer & Membership</h2>
+    <p>
+      Join us in driving meaningful change in the Idoma community. Whether you
+      want to become a member supporting our mission or volunteer your time and
+      skills, there's a place for you in our journey of empowerment and
+      development.
+    </p>
+    <p>
+      Members receive regular updates, access to exclusive events, and
+      opportunities to contribute to decision-making. Volunteers can participate
+      in community projects, outreach programs, event coordination, and more.
+    </p>
+    <button class="btn btn-outline-primary" onclick="openModal('memberModal')">
+      Become a Member
+    </button>
+    <button
+      class="btn btn-outline-primary"
+      onclick="openModal('volunteerModal')"
+    >
+      Volunteer
+    </button>
+  </section>
+
+  <section>
+    <h2>Donate</h2>
+    <p>Support our initiatives with a secure donation.</p>
+
+    <input
+      type="number"
+      id="donationAmount"
+      placeholder="Enter amount (e.g. 10.00)"
+      min="1"
+      step="0.01"
+    />
+
+    <div id="paypal-button-container" style="margin-top: 20px"></div>
+  </section>
+
+  <section>
+    <h2>Partnerships</h2>
+    <p>
+      We welcome collaboration from NGOs, corporations, and other stakeholders.
+    </p>
+    <button
+      class="btn btn-outline-primary"
+      onclick="openModal('partnershipModal')"
+    >
+      Join Us
+    </button>
+  </section>
+
+  <hr />
+
+  <section>
+    <div id="contact" class="contact-container">
+      <div class="contact-left">
+        <form method="POST">
+          {% csrf_token %}
+          <div class="contact-form-head">
+            <h2>Contact Us</h2>
+          </div>
+          {{ contact_form.as_p }}
+          <button class="contact-btn" name="contact_submit" type="submit">
+            Submit
+          </button>
+        </form>
+      </div>
+      <div class="contact-right">
+        <a href="mailto:ad123eg456@gmail.com" class="contact-item">
+          <i class="fa-solid fa-envelope"></i>
+        </a>
+        <a href="tel:+2348068419918" class="contact-item">
+          <i class="fa-solid fa-phone"></i>
+        </a>
+        <a href="#" class="contact-item" target="_blank">
+          <i class="fa-brands fa-facebook-f"></i>
+        </a>
+        <a href="#" class="contact-item" target="_blank">
+          <i class="fa-brands fa-twitter"></i>
+        </a>
+        <a href="#" class="contact-item" target="_blank">
+          <i class="fa-brands fa-square-instagram"></i>
+        </a>
+        <a href="#" class="contact-item" target="_blank">
+          <i class="fa-brands fa-linkedin-in"></i>
+        </a>
+      </div>
+    </div>
+  </section>
+</div>
+<div id="memberModal" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal('memberModal')">&times;</span>
+    <h3>Membership Registration</h3>
+    <form method="POST">
+      {% csrf_token %} {{ member_form.as_p }}
+      <button type="submit" name="member_submit" class="btn btn-primary">
+        Submit
+      </button>
+    </form>
+  </div>
+</div>
+
+<div id="volunteerModal" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal('volunteerModal')">&times;</span>
+    <h3>Volunteer Sign Up</h3>
+    <form method="POST">
+      {% csrf_token %} {{ volunteer_form.as_p }}
+      <button type="submit" name="volunteer_submit" class="btn btn-primary">
+        Submit
+      </button>
+    </form>
+  </div>
+</div>
+<div id="partnershipModal" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal('partnershipModal')">&times;</span>
+    <h3>Partner with Us</h3>
+    <form method="POST">
+      {% csrf_token %} {{ partnership_form.as_p }}
+      <button type="submit" class="btn btn-primary" name="partnership_submit">
+        Send Request
+      </button>
+    </form>
+  </div>
+</div>
+<script>
+  function openModal(id) {
+    document.getElementById(id).style.display = "block";
+  }
+
+  function closeModal(id) {
+    document.getElementById(id).style.display = "none";
+  }
+
+  window.onclick = function (event) {
+    document.querySelectorAll(".modal").forEach((modal) => {
+      if (event.target == modal) modal.style.display = "none";
+    });
+  };
+</script>
+<script src="https://www.paypal.com/sdk/js?client-id=YOUR_CLIENT_ID&currency=USD"></script>
+
+<script>
+  paypal.Buttons({
+    style: {
+      shape: 'rect',
+      color: 'blue',
+      layout: 'vertical',
+      label: 'donate'
+    },
+    createOrder: function(data, actions) {
+      const amountInput = document.getElementById("donationAmount").value;
+      const donationAmount = amountInput && parseFloat(amountInput) > 0 ? amountInput : '10.00';
+
+      return actions.order.create({
+        purchase_units: [{
+          amount: {
+            value: donationAmount
+          }
+        }]
+      });
+    },
+    onApprove: function(data, actions) {
+      return actions.order.capture().then(function(details) {
+        alert('Thank you for your donation, ' + details.payer.name.given_name + '!');
+      });
+    }
+  }).render('#paypal-button-container');
+</script>
+
+{% endblock %}

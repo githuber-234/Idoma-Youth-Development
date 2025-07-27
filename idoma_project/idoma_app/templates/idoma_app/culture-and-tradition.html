@@ -1,0 +1,67 @@
+{% extends "idoma_app/base.html" %}
+{% load static %}
+{% block content %}
+<link
+    rel="stylesheet"
+    type="text/css"
+    href="{% static 'idoma_app/culture-and-tradition.css' %}"
+/>
+<div class="idoma-container">
+    <h1>Idoma Culture and Tradition</h1>
+
+    <section>
+        <h2>Origin of Idoma</h2>
+        <p>The Idoma people originated from migrations out of the Kwararafa kingdom, settling in what is now Benue State, Nigeria, between 1535 and 1625 AD. They migrated due to conflicts within the kingdom. The Idoma language has eight dialects, and they had a non-centralized pre-colonial system.</p>
+    </section>
+
+    <section>
+        <h2>Idoma Mythology</h2>
+        <p>Alekwu, the ancestral spirit, plays a central role in Idoma beliefs. He acts as a link between the living and the dead. Reincarnation is also a key part of their spiritual system.</p>
+    </section>
+
+    <section>
+        <h2>Progenitor: Father of Idoma</h2>
+        <p>According to oral traditions, the father of Idoma is Iduh. His children founded various Idoma towns:</p>
+        <ul>
+            <li>Agabi – Otukpo</li>
+            <li>Idum – Adoka</li>
+            <li>Olinaogwu – Ugboju</li>
+            <li>Eje – Oglewu</li>
+            <li>Edeh – Edumoga</li>
+            <li>Ananawoogeno – Igumale</li>
+            <li>Ebeibi – Umogidi</li>
+            <li>Odeh – Yala</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>People and Language</h2>
+        <p>The Idoma people number around 3.5 million. The Idoma language belongs to the Idomoid group within the Volta-Niger family. Dialects include Agatu, Otukpo, Otukpa, Orokam, Akpa, Agila, Utonkon, Igede, Etilo, and Iyala.</p>
+    </section>
+
+    <section>
+        <h2>Location</h2>
+        <p>Idoma communities are found mainly in Benue State, and also in Taraba, Cross River, Enugu, Kogi, and Nasarawa States.</p>
+    </section>
+
+    <section>
+        <h2>Culture and Attire</h2>
+        <p>They are known for their rich culture, vibrant festivals, and their iconic red and black attire symbolizing strength and royalty.</p>
+        <div class="culture-image">
+            <img src="{% static 'idoma_app/images/pre-wed1.jpg' %}" alt="Idoma Attire 1">
+            <img src="{% static 'idoma_app/images/pre-wed2.jpg' %}" alt="Idoma Attire 2">
+            <img src="{% static 'idoma_app/images/pre-wed3.jpg' %}" alt="Idoma Attire 3">
+        </div>
+    </section>
+
+    <section>
+        <h2>Festivals</h2>
+        <p>Festivals like the Alekwu Festival and Odumu Dance (Lion Dance) are central to Idoma traditions. These events feature rituals, dancing, storytelling, and community feasts.</p>
+        <div class="culture-image">
+            <img src="{% static 'idoma_app/images/idoma-lion-dance.jpg' %}" alt="Idoma Lion Dance">
+            <img src="{% static 'idoma_app/images/alekwu-festival-image.jpg' %}" alt="Alekwu Festival Image">
+            <img src="{% static 'idoma_app/images/idoma-international-carnival.jpg' %}" alt="Idoma International Carnival">
+        </div>
+    </section>
+</div>
+{% endblock %}

@@ -1,0 +1,81 @@
+a {
+  text-decoration: none;
+}
+
+.container {
+  max-width: 960px;
+  margin: auto;
+  padding: 20px;
+  background-color: white;
+  border-radius: 12px;
+  color: #900;
+}
+
+.container h1 {
+  text-align: center;
+  font-size: 2.5em;
+  color: #900;
+  margin-bottom: 40px;
+}
+
+.container section {
+  margin-bottom: 30px;
+  padding: 15px 20px;
+  border-left: 5px solid #c1121f;
+  background-color: #fafafa;
+  border-radius: 8px;
+  transition: box-shadow 0.3s;
+}
+
+.container section:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.container section h2 {
+  font-size: 1.6em;
+  margin-bottom: 8px;
+  color: #c1121f;
+}
+
+.container section p {
+  font-size: 1.05em;
+  color: #444;
+  line-height: 1.6;
+}
+
+.btn.btn-primary {
+  display: inline-block;
+  padding: 12px 24px;
+  background-color: #c1121f;
+  color: white;
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+  margin-top: 10px;
+}
+
+.btn.btn-primary:hover {
+  background-color: #a00e1c;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(193, 18, 31, 0.3);
+}
+
+@media screen and (max-width: 768px) {
+  .container {
+    padding: 15px;
+  }
+
+  .container h1 {
+    font-size: 2em;
+  }
+
+  .container section h2 {
+    font-size: 1.3em;
+  }
+
+  .btn.btn-primary {
+    padding: 10px 18px;
+    font-size: 0.95em;
+  }
+}

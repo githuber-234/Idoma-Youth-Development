@@ -1,0 +1,35 @@
+.news-container {
+  max-width: 900px;
+  margin: auto;
+}
+.news-heading {
+  text-align: center;
+  margin-bottom: 30px;
+}
+.news-heading h1 {
+  color: #900;
+}
+.news-card {
+  background: white;
+  margin-bottom: 20px;
+  border-left: 5px solid #900;
+  padding: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  border-radius: 6px;
+}
+.news-card h3 {
+  margin-top: 0;
+}
+.news-date {
+  font-size: 0.9em;
+  color: #777;
+}
+.read-more {
+  display: inline-block;
+  margin-top: 10px;
+  color: #900;
+  text-decoration: none;
+}
+.read-more:hover {
+  text-decoration: underline;
+}

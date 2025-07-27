@@ -1,0 +1,35 @@
+{% extends "idoma_app/base.html" %} {% block content %} {% load static %}
+<link
+  rel="stylesheet"
+  type="text/css"
+  href="{% static 'idoma_app/community.css' %}"
+/>
+<div class="container">
+  <h1>Community Engagement</h1>
+  <a href="#">
+    <section>
+      <h2>Town Hall Meetings</h2>
+      <p>
+        Listening to community voices through consultations and local
+        gatherings.
+      </p>
+    </section>
+  </a>
+  <a href="{% url 'women-youth-forum' %}">
+    <section>
+      <h2>Women & Youth Forums</h2>
+      <p>
+        Forums to empower women and youth with skills, dialogue, and leadership.
+      </p>
+    </section>
+  </a>
+  <a href="#">
+    <section>
+      <h2>Diaspora Engagement</h2>
+      <p>
+        Encouraging the Idoma diaspora to participate in development efforts.
+      </p>
+    </section>
+  </a>
+</div>
+{% endblock %}

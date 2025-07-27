@@ -1,0 +1,24 @@
+{% extends "idoma_app/base.html" %}
+{% load static %}
+{% block content %}
+<link rel="stylesheet" href="{% static 'idoma_app/news.css' %}">
+<div class="news-container">
+    <div class="news-heading">
+        <h1>Idoma News</h1>
+        <p>Stay informed about the latest developments in Idoma Youth Development</p>
+    </div>
+
+    {% for news in news_list %}
+    <div class="news-card">
+        <h3>{{ news.title }}</h3>
+        <div class="news-date">{{ news.date_posted|date:"F d, Y" }}</div>
+        <p>{{ news.summary }}</p>
+        {% if news.link %}
+            <a href="{{ news.link }}" class="read-more" target="_blank">Read Full Story →</a>
+        {% endif %}
+    </div>
+    {% empty %}
+    <p>No news available at the moment. Check back later!</p>
+    {% endfor %}
+</div>
+{% endblock %}

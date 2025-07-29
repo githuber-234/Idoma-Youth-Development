@@ -62,7 +62,7 @@ class GetInvolvedView(FormView):
                 message = form.cleaned_data['message']
                 subject = "Idoma Youth Development Initiative - Contact"
                 full_message = f"From: {name} <{email}>\n\nMessage:\n{message}"
-                send_mail(subject, full_message, settings.DEFAULT_FROM_EMAIL, ['ad123eg456@gmail.com'])
+                send_mail(subject, full_message, settings.DEFAULT_FROM_EMAIL, ['idomadevelopmentinitiative@gmail.com'])
                 return redirect(self.success_url)
 
         elif 'member_submit' in request.POST:
@@ -74,7 +74,7 @@ class GetInvolvedView(FormView):
                 reason = form.cleaned_data['reason']
                 subject = "Idoma Youth Development Initiative - Member Application"
                 full_message = f"From: {name} <{email}>\n\nReason:\n{reason}"
-                send_mail(subject, full_message, settings.DEFAULT_FROM_EMAIL, ['ad123eg456@gmail.com'])
+                send_mail(subject, full_message, settings.DEFAULT_FROM_EMAIL, ['idomadevelopmentinitiative@gmail.com'])
                 return redirect(self.success_url)
 
         elif 'volunteer_submit' in request.POST:
@@ -86,7 +86,7 @@ class GetInvolvedView(FormView):
                 skills = form.cleaned_data['skills']
                 subject = "Idoma Youth Development Initiative - Volunteer"
                 full_message = f"From: {name} <{email}>\n\nSkills:\n{skills}"
-                send_mail(subject, full_message, settings.DEFAULT_FROM_EMAIL, ['ad123eg456@gmail.com'])
+                send_mail(subject, full_message, settings.DEFAULT_FROM_EMAIL, ['idomadevelopmentinitiative@gmail.com'])
                 return redirect(self.success_url)
             
         elif 'partnership_submit' in request.POST:
@@ -98,7 +98,7 @@ class GetInvolvedView(FormView):
                 message = form.cleaned_data['message']
                 subject = "Idoma Youth Development Initiative - Partnership"
                 full_message = f"From: {organization} <{email}>\n\nMessage:\n{message}"
-                send_mail(subject, full_message, settings.DEFAULT_FROM_EMAIL, ['ad123eg456@gmail.com'])
+                send_mail(subject, full_message, settings.DEFAULT_FROM_EMAIL, ['idomadevelopmentinitiative@gmail.com'])
                 return redirect(self.success_url)
 
         context = {
